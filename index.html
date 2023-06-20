@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+    <head>
+        <meta charset="UTF-8">
+        <title>YangJae_Library_Home</title>
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+        <!--아이콘-->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+       
+       <style>
+            * {
+            box-sizing: border-box; 
+            margin: 0;
+            text-decoration: none;
+            }
+            
+            body {
+                margin: 0;
+                min-width: 1440px; /**/
+                font-family: 'Noto Sans KR', sans-serif;
+            }
+
+            .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 48
+            }
+           
+            .green{
+                
+                width: 1440px;
+                height: 430px;
+                background-color: #08726A;
+                margin-bottom: 72px;
+            }
+            
+            /* 네비게이션 바*/
+            .navibar{
+                
+                height: 52px; /* 아이콘 사이즈에 맞추기 */
+                padding-left: 160px;
+                padding-right: 160px;
+                padding-top: 80px;
+                /*padding-bottom: 112px; /* 아니 height 줫는데 0이라 떠서 원래 112인데 52더함 근데 또 전체 더하니 6이 오바돼서 6뺌..*/
+            }
+
+            .navibar::after {
+			content: "";
+			display: block;
+			clear: both;
+		}
+            #logo::after{
+                content: "";
+			display: block;
+			clear: both;
+            }
+
+            #menu::after{
+                content: "";
+			display: block;
+			clear: both;
+            }
+
+            
+
+             /*책 아이콘*/
+            .book{
+            float: left;
+            color:white;
+            font-size: 52px;
+            }
+
+            .library{
+                margin-left: 8px;
+                float: left;
+                font-size: 32px;
+                font-weight: 700;
+                color: #f5f5f5;
+            }
+
+            #logo{
+               line-height: 52px; 
+               display: inline-block;
+               float: left;
+            }
+
+            #menu{
+                float: right;
+                list-style: none;
+                padding: 0;
+                margin: 0;
+                line-height: 52px;
+            }
+
+
+            .green .navibar #menu li{
+                float: left;
+                margin-left: 40px;
+                line-height: 52px; /* 네이버에서 뭐 햇엇는데 */
+            }
+
+            .green .navibar #menu li a{
+                color: #f5f5f5;
+                font-size: 20px;
+                text-decoration: none;
+                font-weight: 500;
+            }
+
+            .green .navibar #menu li:nth-child(1) a{
+               border-bottom: 2px solid #f5f5f5;
+            }
+
+            /* 검색창 */
+            .data-search{
+                float: left;
+                color: #424242;
+                font-size: 16px;
+                font-family: 500;
+                padding-left: 32px;
+                padding-right: 24px;
+                line-height: 72px;
+            }
+            
+            .enter{
+                float: left;
+                padding-left: 24px;
+                color: #BDBDBD;
+                font-size: 16px;
+                font-family: 500;
+                line-height: 72px;
+            }
+            
+            .line{
+                float: left;
+                width: 0.5px;
+                height: 32px;
+                margin-top: 20px;
+                background-color: #BDBDBD;
+            }
+
+            .searchbar-w{
+                float: left;
+                background-color: white;
+                width: 840px;
+                height: 72px;
+                margin-left: 256px;
+                margin-top: 112px;
+            }
+
+            /* 검색 아이콘*/
+            .search {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 48;
+            
+            float: left;
+            color:white;
+            font-size: 30px;
+            background-color: #424242;
+            padding-left: 29px;
+            padding-right: 29px;
+            padding-top: 21px;
+            padding-bottom: 21px;
+            margin-top: 112px;
+            margin-right: 160px;
+            }
+
+            
+
+            /* 큰 글씨 */
+            h1{
+                margin-left: 160px;
+                font-size: 32px;
+                font-weight: 700;
+            }
+
+            /* clearfix */
+            .clearfix{
+                clear: both;
+            }
+
+            /* 행사 공연 전시 */
+            .event-list .event:not(:first-of-type) {
+                margin-left: 23px;
+            }
+
+            .event-list{
+                width: 1120px;
+                margin-left: 160px;
+                margin-right: 160px;
+                margin-bottom: 136px;
+                margin-top: 32px;
+            }
+
+            .event{
+                width: 358px;
+                display: block;
+                color: #424242;
+                float: left;
+            }
+
+            .event-text{
+                width: 358px;
+                height: 100px;
+                background-color: #EEEEEE;
+                padding-left: 8px;
+                position: relative;
+                top: -5px;
+            }
+
+            .date-event{
+                padding-top: 24px;
+            }
+
+            .title-event{
+                padding-bottom: 24px;
+            }
+
+            /* 휴관일 */
+            .offday-box{
+                width: 1440px;
+                height: 210px;
+                background-color: #424242;
+                color: #f5f5f5;
+                font-size: 28px;
+                text-align: center;
+                margin-bottom: 136px;
+            }
+
+            .offday-info{
+                padding-top: 56px;
+                padding-bottom: 16px;
+            }
+
+            .offday-dates{
+                text-align: center;
+                padding-bottom: 56px;
+                padding-left: 547px;
+                padding-right: 548px;
+            }
+
+            .offday-date:not(:nth-child(6)){
+                float: left;
+                padding-right: 40px;
+            }
+
+            /* 공지사항 */
+
+            /*.notice-list{
+                width: 1120px;
+                margin-left: 160px;
+                margin-right: 160px;
+                margin-bottom: 136px;
+            }*/
+
+            .event-list .notice-content:not(:first-of-type) {
+                margin-left: 24px;
+            }
+            
+            .notice-content{
+                float: left;
+                width: 548px;
+                color: #424242;
+                padding-top: 32px;
+                padding-bottom: 24px;
+                border-top: 1px solid #BDBDBD;
+                border-bottom: 1px solid #BDBDBD;
+            }
+
+            .notice-title{
+                padding-bottom: 88px;
+                font-size: 24px;
+            }
+
+            .notice-date{
+                font-size: 20px;
+            }
+
+
+            /* footer */
+
+            .footer-box{
+                width: 1440px;
+                height: 210px;
+                background-color: #08726A;
+                font-size: 16px;
+                font-weight: 500;
+            }
+
+            .footer-logo{
+                color: rgba(255, 255, 255, 0.7);
+                padding-left: 160px;
+                padding-top: 121px;
+            }
+
+            .footer-text{
+                height: 23px;
+                color: #f5f5f5;
+                padding-left: 360px;
+                padding-right: 160px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- 네비바&검색창 -->
+        <div class="green">
+            <div class="navibar">
+                <a href="#" id="logo"> 
+                    <span class="material-symbols-outlined book"> menu_book </span>
+                    <div class="library">LIBRARY</div>
+                    
+                </a>
+                <ul id="menu">
+                    <li><a href="https://serineoo.github.io/library_home/">홈</a></li>
+                    <li><a href="#">신착도서</a></li>
+                    <li><a href="#">내서재</a></li>
+                </ul>
+            </div>
+
+            <div class="searchbar-w">
+                <p class="data-search">자료탐색</p>
+                <div class="line"></div>
+                <p class="enter">검색어를 입력하세요.</p>
+            </div>
+            <span class="material-symbols-outlined search">search</span>
+        </div>
+
+        <h1>행사 공연 전시+</h1>
+        <div class="event-list">
+            <a href="#" class="event">
+                <img src="https://i.postimg.cc/0NfDSVnV/image.png" alt="행사1" width="358px" height="504px">
+                <div class="event-text">
+                    <div class="date-event">2023.06.24</div>
+                    <div class="title-event">2023 하반기 시니어 디지털 금융교육</div>
+                </div>
+            </a>
+
+            <a href="#" class="event">
+                <img src="https://i.postimg.cc/nVqxBD9S/real1.jpg" alt="행사2" width="358px" height="504px">
+                <div class="event-text">
+                    <div class="date-event">2023.06.14</div>
+                    <div class="title-event">2023년 여름학기 서리풀문화강좌 안내</div>
+                </div>
+            </a>
+
+            <a href="#" class="event">
+                <img src="https://i.postimg.cc/wBTcwK7C/image.png" alt="행사3" width="358px" height="504px">
+                <div class="event-text">
+                    <div class="date-event">2023.06.14</div>
+                    <div class="title-event">[북스타트] 책이랑 콩콩(영유아, 아동 대상) 안내</div>
+                </div>
+            </a>
+            <div class="clearfix"></div>
+        </div>
+
+        <div class="offday-box">
+            <div class="offday-info">6월 도서관 휴관일 안내</div>
+            <div class="offday-dates">
+                <div class="offday-date">2</div>
+                <div class="offday-date">6</div>
+                <div class="offday-date">9</div>
+                <div class="offday-date">16</div>
+                <div class="offday-date">23</div>
+                <div class="offday-date">30</div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+
+        <h1>공지사항+</h1>
+        <div class="event-list">
+            <a href="#" class="notice-content">
+                <div class="notice-title">서초구립양재도서관 자원봉사자 모집</div>
+                <div class="notice-date">2023.03.06</div>
+            </a>
+            
+            <a href="#" class="notice-content">
+                <div class="notice-title">도서관 주차장 유료화 안내</div>
+                <div class="notice-date">2023.02.20</div>
+            </a>
+            <div class="clearfix"></div>
+        </div>
+
+        <!-- footer -->
+        <div class="footer-box">
+            <div class="footer-logo">
+                <span class="material-symbols-outlined book"> menu_book </span>
+                <div class="library">LIBRARY</div>
+            </div>
+
+            <div class="footer-text">
+                <div style="float: right;">우)06755 서울특별시 서초구 양재천로33(양재동 102-5·6번지)</div>
+                <div class="clearfix"></div>
+                <div style="float: right; position: relative; top:-28px;">COPYRIGHT Ⓒ 2019 SEOCHOGU YANGJAE LIBRARY. ALL RIGHTS RESERVED.</div>
+            </div>
+        </div>
+
+    </body>
+</html>
